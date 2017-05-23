@@ -1,0 +1,18 @@
+UserAgent:
+  Permit:
+    - Googlebot
+    - Twitterbot
+  Deny:
+    - Baidu
+Path:
+  Permit:
+    - index.html
+    - inde.php
+  Deny:
+    - xmlrpc.php
+    - wp-login.php
+CountryFromIp:
+  Permit:
+    -
+  Deny:
+    - US
