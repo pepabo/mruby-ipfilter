@@ -1,4 +1,4 @@
-# mruby-ipfilter   [![Build Status](https://travis-ci.org/tahira/mruby-ipfilter.svg?branch=master)](https://travis-ci.org/tahira/mruby-ipfilter)
+# mruby-ipfilter   [![Build Status](https://travis-ci.org/pepabo/mruby-ipfilter.svg?branch=master)](https://travis-ci.org/pepabo/mruby-ipfilter)
 IPFilter class
 ## install by mrbgems
 - add conf.gem line to `build_config.rb`
