@@ -12,7 +12,6 @@ before_script:
   - cd ../
   - git clone https://github.com/mruby/mruby.git
   - cd mruby
-  - cp -fp ../mruby-ipfilter/.travis_build_config.rb build_config.rb
   - sudo wget -N http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
   - sudo gunzip GeoLite2-City.mmdb.gz
   - sudo mv GeoLite2-City.mmdb /tmp/
