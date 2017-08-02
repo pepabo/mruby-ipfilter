@@ -9,12 +9,6 @@ install:
   - sudo apt-get -qq install rake bison git gperf
   - sudo apt-get install -y libmaxminddb0 libmaxminddb-dev mmdb-bin libyaml-dev
 before_script:
-  - cd ../
-  - git clone https://github.com/mruby/mruby.git
-  - cd mruby
-  - cp -fp ../.travis_build_config.rb build_config.rb
-  - sudo wget -N http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
-  - sudo gunzip GeoLite2-City.mmdb.gz
-  - sudo mv GeoLite2-City.mmdb /tmp/
+  - rake setup
 script:
-  - make all test
+  - rake test
