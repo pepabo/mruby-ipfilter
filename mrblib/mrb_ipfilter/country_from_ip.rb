@@ -1,7 +1,9 @@
 module IPFilter
   class CountryFromIP < Base
-    def initialize(db_path)
+    def initialize(db_path, retry_usleep=50000, retry_count=10)
       @_m = Mutex.new :global => true
+      @retry_usleep = retry_usleep
+      @retry_count = retry_count
       @_db = MaxMindDB.new db_path
     end
 
@@ -19,7 +21,7 @@ module IPFilter
 
     def lock_do(val, &block)
       r = false
-      @_m.try_lock_loop do
+      @_m.try_lock_loop(@retry_usleep, @retry_usleep * @retry_count) do
         @_db.lookup_string val
         r = block.call
       end
