@@ -1,4 +1,4 @@
-cip = IPFilter::CountryFromIP.new('/tmp/GeoLite2-City.mmdb')
+cip = IPFilter::CountryFromIP.new('./build/maxminddb-fixtures/GeoLite2-City.mmdb')
 cip.permit = ['US', 'JP']
 cip.deny = ['KR']
 
