@@ -11,6 +11,12 @@ MRuby::Build.new do |conf|
     conf.gem :github => 'tahira/mruby-ipfilter'
 end
 ```
+
+## dependent libraries
+
+- libmaxminddb
+- libyaml
+
 ## example
 ```ruby
 # CountryFromIP sample
