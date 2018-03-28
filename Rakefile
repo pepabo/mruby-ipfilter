@@ -30,16 +30,3 @@ task :clean do
   sh "cd mruby && rake deep_clean"
 end
 
-desc "setup environment"
-task :setup do
-  case RbConfig::CONFIG['host_os']
-  when /darwin|mac os|linux/
-    sh 'curl -O http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz'
-    sh 'tar zxf GeoLite2-City.tar.gz'
-    sh 'mv -fv GeoLite2-City_*/GeoLite2-City.mmdb /tmp/'
-    sh 'rm -rf GeoLite2-City*'
-    p 'please install libmaxminddb'
-    p '[Mac OSX] brew install libmaxminddb libyaml'
-    p '[CentOS] yum install epel-relase && yum install libmaxminddb-devel libyaml-devel'
-  end
-end

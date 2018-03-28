@@ -8,7 +8,5 @@ before_install:
 install:
   - sudo apt-get -qq install rake bison git gperf
   - sudo apt-get install -y libmaxminddb0 libmaxminddb-dev mmdb-bin libyaml-dev
-before_script:
-  - rake setup
 script:
   - rake test
